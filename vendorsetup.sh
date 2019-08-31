@@ -14,4 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo syberia_sanders-userdebug
+add_lunch_combo dot_sanders-userdebug
+add_lunch_combo dot_sanders-user
+add_lunch_combo dot_sanders-eng
