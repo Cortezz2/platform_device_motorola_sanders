@@ -29,7 +29,7 @@
         <value>1036800</value>
         <value>1401600</value>
         <value>1689600</value>
-        <value>1843200</value>
+        <value>1804800</value>
         <value>1958400</value>
         <value>2016000</value>
     </array>
@@ -63,9 +63,4 @@
     <item name="cpu.idle">4</item>
     <item name="cpu.awake">7</item>
     <item name="battery.capacity">3000</item>
-    <item name="wifi.controller.idle">0.585</item>
-    <item name="wifi.controller.rx">65.896</item>
-    <item name="wifi.controller.tx">130.159</item>
-    <array name="wifi.controller.tx_levels" />
-    <item name="wifi.controller.voltage">184.53</item>
 </device>

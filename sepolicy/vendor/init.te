@@ -6,6 +6,8 @@ allow init hwservicemanager:binder call;
 allow init mm-qcamerad:binder transfer;
 allow init platform_app:binder transfer;
 
+allow init sysfs_devices_system_cpu:dir write;
+allow init sysfs_lowmemorykiller:dir write;
 allow init system_app:binder transfer;
 allow init system_data_file:file lock;
 
@@ -24,6 +26,8 @@ allow init system_data_file:file { rename append };
 allow init firmware_file:dir mounton;
 
 allow init fm_radio_device:chr_file write;
+
+allow init system_file:system module_load;
 
 # ptt_socket_app
 allow init dnsproxyd_socket:sock_file write;

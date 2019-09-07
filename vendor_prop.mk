@@ -51,7 +51,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.hfp.client=1 \
-    vendor.qcom.bluetooth.soc=smd \
+    vendor.qcom.bluetooth.soc=pronto \
     qcom.bt.le_dev_pwr_class=1 \
     ro.cutoff_voltage_mv=3400 \
     ro.bluetooth.hfp.ver=1.7 \
@@ -76,7 +76,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.mot.startup_probing=0 \
     persist.camera.debug.logfile=0 \
     persist.camera.gyro.disable=0 \
-    persist.camera.eis.enable=1 \
     persist.camera.HAL3.enabled=1 \
     persist.camera.expose.aux=1 \
     vidc.enc.dcvs.extra-buff-count=2 \
@@ -85,6 +84,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.vidc.dec.downscalar_width=1920 \
     vendor.vidc.dec.downscalar_height=1088 \
+    media.camera.ts.monotonic=1 \
+    persist.camera.time.monotonic=1 \
+    persist.camera.eis.enable=1 \
     vidc.dec.disable.split.cpu=1 \
     video.disable.ubwc=1 \
     vendor.camera.aux.packagelist=com.motorola.camera2,com.google.android.Pixel2Mod \
@@ -95,7 +97,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1 \
     persist.cne.logging.qxdm=3974 \
     persist.cne.rat.wlan.chip.oem=WCN \
-    persist.vendor.dpm.feature=0 \
+    persist.dpm.feature=0 \
     persist.sys.cnd.iwlan=1
 
 #property to enable fingerprint
@@ -123,12 +125,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
     debug.sf.hw=0 \
     debug.sf.latch_unsignaled=1 \
-    debug.sf.early_phase_offset_ns=5000000 \
     persist.hwc.mdpcomp.enable=true \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     ro.opengles.version=196610 \
-    ro.sf.lcd_density=480 \
+    ro.sf.lcd_density=432 \
     persist.debug.wfd.enable=1 \
     sdm.debug.disable_skip_validate=1 \
     debug.gralloc.enable_fb_ubwc=1 \
@@ -140,12 +141,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.display.disable_skip_validate=1
-
-# Wifi-Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
-    vendor.video.disable.ubwc=1
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -168,7 +163,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.radio.jbims=1 \
     persist.radio.RATE_ADAPT_ENABLE=1 \
     persist.radio.VT_ENABLE=1 \
     persist.radio.VT_HYBRID_ENABLE=1 \
@@ -180,7 +174,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.ims.rcs=false \
     persist.ims.volte=true \
     persist.ims.vt.epdg=false \
-    persist.mm.sta.enable=0
+    persist.mm.sta.enable=0 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -194,6 +191,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # UI
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.use_fifo_ui=1
+
+# USB debugging at boot
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1
 
 # Netmgr
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -235,8 +239,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.vendor.at_library=libqti-at.so \
-    ro.vendor.gt_library=libqti-gt.so \
-    vendor.debug.enable.gamed=0
+    ro.vendor.gt_library=libqti-gt.so
 
 # Qualcomm
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -257,7 +260,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.radio.apn_delay=5000 \
-    persist.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.dfr_mode_set=1 \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.dpm.feature=0 \
@@ -355,6 +358,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qti.inputopts.enable=true \
     persist.vendor.qti.inputopts.movetouchslop=0.6
 
+# UI
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1
+
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.mtp=0x2e82 \
@@ -366,37 +373,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.bpteth=0x2ee7 \
     ro.usb.bpteth_adb=0x2ee8
 
-# Volte
+#WFD
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.vendor.radio.force_on_dc=true \
-persist.radio.custom_ecc=1 \
-persist.radio.data_con_rprt=1 \
-persist.vendor.radio.data_ltd_sys_ind=1 \
-persist.radio.data_ltd_sys_ind=1 \
-persist.vendor.radio.ignore_dom_time=10 \
-persist.radio.ignore_dom_time=10 \
-persist.radio.rat_on=combine \
-persist.radio.is_wps_enabled=true \
-persist.radio.videopause.mode=1 \
-persist.radio.sap_silent_pin=1 \
-persist.radio.always_send_plmn=true \
-persist.rcs.supported=1 \
-persist.dbg.ims_volte_enable=1 \
-persist.dbg.volte_avail_ovr=1 \
-persist.dbg.vt_avail_ovr=1 \
-persist.dbg.wfc_avail_ovr=1 \
-persist.radio.data_lte_sys_ind=1
+    persist.debug.wfd.enable=1 \
+    vendor.video.disable.ubwc=1
 
-# Spectrum
+# FOSS CONFIGS
 PRODUCT_PROPERTY_OVERRIDES += \
-    spectrum.support=1 \
-    persist.spectrum.kernel=MAYHEM
+    ro.qcom.dpps.sensortype=3 \
+    ro.qualcomm.display.paneltype=1 \
+    ro.qualcomm.foss=1 \
+    config.foss.xml=1 \
+    config.foss.path=/vendor/etc/FOSSConfig.xml
+
+#IDKY
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.model=sanders
 
 # Create Swap disk, if below sys-prop enabled & also if device has lower (< 1 GB) RAM
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.config.swap=true
 
-# Properties
+# PROPERTIES
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.fha_enable=true \
     ro.sys.fw.bg_apps_limit=32 \
@@ -407,3 +405,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.dha_th_rate=2.3 \
     ro.config.sdha_apps_bg_max=64 \
     ro.config.sdha_apps_bg_min=8
+
+# Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.superior.maintainer=Mayur Varde
+
+# GPS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.location.osnlp.region.package=com.google.android.gms
