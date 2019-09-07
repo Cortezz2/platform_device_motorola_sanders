@@ -48,3 +48,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # FINGERPRINT
 BUILD_FINGERPRINT := google/crosshatch/crosshatch:9/PQ1A.190105.004/5148680:user/release-keys
 VENDOR_BUILD_FINGERPRINT := google/crosshatch/crosshatch:9/PQ1A.190105.004/5148680:user/release-keys
+
+BOOTLEGGERS_BUILD_TYPE := PRIVATE
