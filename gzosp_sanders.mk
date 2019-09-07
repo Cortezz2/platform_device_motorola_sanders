@@ -22,8 +22,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from sanders device
 $(call inherit-product, device/motorola/sanders/device.mk)
 
-# Inherit some cmmon syberia stuff.
-$(call inherit-product, vendor/bootleg/config/common.mk)
+# Inherit some cmmon GZOSP stuff.
+$(call inherit-product, vendor/gzosp/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -31,7 +31,7 @@ TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
-PRODUCT_NAME := bootleg_sanders
+PRODUCT_NAME := gzosp_sanders
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 
@@ -47,5 +47,3 @@ VENDOR_BUILD_FINGERPRINT := google/crosshatch/crosshatch:9/PQ1A.190105.004/51486
 
 # for specific
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
-
-BOOTLEGGERS_BUILD_TYPE := UNOFICIAL
