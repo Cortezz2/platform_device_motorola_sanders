@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/bootleg_sanders.mk
+	$(LOCAL_DIR)/validus_sanders.mk
