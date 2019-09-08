@@ -26,14 +26,14 @@ $(call inherit-product, device/motorola/sanders/device.mk)
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
 
 # Inherit some Common Rom Stuff.
-$(call inherit-product, vendor/validus/config/common_full_phone.mk)
+$(call inherit-product, vendor/cosp/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
-PRODUCT_NAME := validus_sanders
+PRODUCT_NAME := cosp_sanders
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_MODEL := Moto G5s Plus
@@ -48,5 +48,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # FINGERPRINT
 BUILD_FINGERPRINT := google/crosshatch/crosshatch:9/PQ1A.190105.004/5148680:user/release-keys
 VENDOR_BUILD_FINGERPRINT := google/crosshatch/crosshatch:9/PQ1A.190105.004/5148680:user/release-keys
-
-VALIDUS_BUILD_TYPE := PRIVATE
