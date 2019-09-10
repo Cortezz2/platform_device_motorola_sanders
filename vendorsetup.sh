@@ -1,1 +1,1 @@
-add_lunch_combo cosp_sanders-userdebug
+add_lunch_combo aosp_sanders-userdebug
