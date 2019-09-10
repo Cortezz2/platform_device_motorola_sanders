@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/aosp_sanders.mk
+	$(LOCAL_DIR)/aosmp_sanders.mk
