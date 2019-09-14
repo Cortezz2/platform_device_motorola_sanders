@@ -1,4 +1,4 @@
-<manifest version="1.0" type="device">
+<manifest version="1.0" type="device" target-level="1">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -45,15 +45,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.cas</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IMediaCasService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -68,13 +59,13 @@
         <version>1.0</version>
         <interface>
             <name>ICryptoFactory</name>
-            <instance>default</instance>
             <instance>widevine</instance>
+            <instance>default</instance>
         </interface>
         <interface>
             <name>IDrmFactory</name>
-            <instance>default</instance>
             <instance>widevine</instance>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -94,6 +85,7 @@
             <name>IGnss</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IGnss/gnss_vendor</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
@@ -183,7 +175,7 @@
     <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.0</version>
         <interface>
             <name>IPower</name>
             <instance>default</instance>
@@ -192,7 +184,7 @@
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.0</version>
         <interface>
             <name>IRadio</name>
             <instance>slot1</instance>
@@ -287,18 +279,22 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>com.qualcomm.qti.bluetooth_audio</name>
+        <name>com.fingerprints.extension</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>IBluetoothAudio</name>
+            <name>IFingerprintNavigation</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSensorTest</name>
             <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
         <name>com.qualcomm.qti.imscmservice</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.0</version>
         <interface>
             <name>IImsCmService</name>
             <instance>qti.ims.connectionmanagerservice</instance>
@@ -343,7 +339,7 @@
     <hal format="hidl">
         <name>vendor.display.config</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IDisplayConfig</name>
             <instance>default</instance>
@@ -382,15 +378,6 @@
         <version>1.0</version>
         <interface>
             <name>IAlarm</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.fm</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IFmHci</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -502,53 +489,43 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.radio.uim_remote_server</name>
+        <name>vendor.qti.hardware.sensorscalibrate</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>IUimRemoteServiceServer</name>
-            <instance>uimRemoteServer0</instance>
-            <instance>uimRemoteServer1</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.imsrtpservice</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IRTPService</name>
-            <instance>imsrtpservice</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.lineage.power</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ILineagePower</name>
+            <name>ISensorsCalibrate</name>
             <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.trust</name>
+        <name>vendor.qti.hardware.wifi.hostapd</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>IUsbRestrict</name>
+            <name>IHostapdVendor</name>
             <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.livedisplay</name>
+        <name>vendor.qti.hardware.wifi.supplicant</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
         <interface>
-            <name>IDisplayModes</name>
+            <name>ISupplicantVendor</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.wifidisplayhal</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
         <interface>
-            <name>IPictureAdjustment</name>
-            <instance>default</instance>
+            <name>IDSManager</name>
+            <instance>wifidisplaydshal</instance>
+        </interface>
+        <interface>
+            <name>IHDCPSession</name>
+            <instance>wifidisplayhdcphal</instance>
         </interface>
     </hal>
 </manifest>

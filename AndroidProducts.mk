@@ -17,5 +17,6 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/pixys_sanders.mk
 
 COMMON_LUNCH_CHOICES := \
+	pixys_sanders-eng \
 	pixys_sanders-userdebug \
-	pixys_sanders-eng
+	pixys_sanders-user
