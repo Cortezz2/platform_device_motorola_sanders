@@ -1,6 +1,6 @@
-#!/vendor/bin/sh
+#!/system/vendor/bin/sh
 
-PATH=/sbin:/vendor/bin
+PATH=/sbin:/system/vendor/bin
 export PATH
 
 scriptname=${0##*/}
@@ -25,6 +25,7 @@ rev="p${hw%??}$minor1$minor2"
 rev2=`echo $rev | tr '[:upper:]' '[:lower:]'`
 
 setprop ro.boot.hardware.revision $rev2
+setprop ro.hw.revision $rev2
 unset hw cinfo m1 m2 minor1 minor2
 
 # Let kernel know our image version/variant/crm_version
@@ -43,4 +44,4 @@ if [ -f /sys/devices/soc0/select_image ]; then
     echo $oem_version > /sys/devices/soc0/image_crm_version
 fi
 
-insmod /vendor/lib/modules/isdbt.ko
+

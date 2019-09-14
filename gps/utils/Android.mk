@@ -1,3 +1,7 @@
+ifneq ($(BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE),)
+ifneq ($(BUILD_TINY_ANDROID),true)
+#Compile this library only for builds with the latest modem image
+
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -7,7 +11,8 @@ include $(CLEAR_VARS)
 LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \
-    liblog
+    liblog \
+    libprocessgroup
 
 LOCAL_SRC_FILES += \
     loc_log.cpp \
@@ -54,3 +59,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libgps.utils_headers
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
 include $(BUILD_HEADER_LIBRARY)
+
+endif # not BUILD_TINY_ANDROID
+endif # BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE
