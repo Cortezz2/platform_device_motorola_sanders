@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "Jorg3Lucas/vendor_motorola_sanders",
+    "target_path": "vendor/motorola/sanders",
+    "branch": "pie"
+  },
+  {
+    "repository": "Jorg3Lucas/kernel_motorola_sanders",
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "perf+"
+  }
+]

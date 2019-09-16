@@ -69,7 +69,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.mot.startup_probing=0 \
     persist.camera.debug.logfile=0 \
     persist.camera.gyro.disable=0 \
-    persist.camera.eis.enable=1 \
     persist.camera.HAL3.enabled=1 \
     persist.camera.expose.aux=1 \
     vidc.enc.dcvs.extra-buff-count=2 \
@@ -87,7 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1 \
     persist.cne.logging.qxdm=3974 \
     persist.cne.rat.wlan.chip.oem=WCN \
-    persist.dpm.feature=0 \
+    persist.vendor.dpm.feature=0 \
     persist.sys.cnd.iwlan=1
 
 #property to enable fingerprint
@@ -118,7 +117,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     ro.opengles.version=196610 \
-    ro.sf.lcd_density=432 \
+    ro.sf.lcd_density=480 \
     persist.debug.wfd.enable=1 \
     sdm.debug.disable_skip_validate=1 \
     debug.gralloc.enable_fb_ubwc=1 \
@@ -131,16 +130,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.display.disable_skip_validate=1
 
-# Wifi-Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
-    vendor.video.disable.ubwc=1
-
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fm.transmitter=false \
-    vendor.hw.fm.init=0
+    ro.fm.transmitter=false
 
 # HWUI properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -296,28 +288,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.bpt_adb=0x2ee6 \
     ro.usb.bpteth=0x2ee7 \
     ro.usb.bpteth_adb=0x2ee8
-
-# Volte
-PRODUCT_PROPERTY_OVERRIDES += \
-persist.vendor.radio.force_on_dc=true \
-persist.radio.custom_ecc=1 \
-persist.radio.data_con_rprt=1 \
-persist.vendor.radio.data_ltd_sys_ind=1 \
-persist.radio.data_ltd_sys_ind=1 \
-persist.vendor.radio.ignore_dom_time=10 \
-persist.radio.ignore_dom_time=10 \
-persist.radio.rat_on=combine \
-persist.radio.is_wps_enabled=true \
-persist.radio.videopause.mode=1 \
-persist.radio.sap_silent_pin=1 \
-persist.radio.always_send_plmn=true \
-persist.rcs.supported=1 \
-persist.dbg.ims_volte_enable=1 \
-persist.dbg.volte_avail_ovr=1 \
-persist.dbg.vt_avail_ovr=1 \
-persist.dbg.wfc_avail_ovr=1 \
-persist.radio.data_lte_sys_ind=1
-
-# GPS
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.location.osnlp.region.package=com.google.android.gms

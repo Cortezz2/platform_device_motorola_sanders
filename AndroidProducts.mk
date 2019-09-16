@@ -14,9 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/pixys_sanders.mk
+	$(LOCAL_DIR)/arrow_sanders.mk
 
 COMMON_LUNCH_CHOICES := \
-	pixys_sanders-eng \
-	pixys_sanders-userdebug \
-	pixys_sanders-user
+	arrow_sanders-userdebug

@@ -1,4 +1,4 @@
-Device Tree for Moto G5S Plus (sanders)
+Device Tree for Moto G5S Plus (sanders) by Cortezz and Clytheee
 ===========================================
 
 The Motorola Moto G5S Plus (codenamed _"sanders"_) is a mid-range smartphone from Motorola mobility.
